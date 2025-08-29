@@ -1,4 +1,4 @@
 mod components;
 mod dog_api;
 
-pub use components::{Buttons, DogView};
+pub use components::DogView;
