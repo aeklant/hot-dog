@@ -1,5 +1,5 @@
 use dioxus::prelude::*;
-use super::dog_api::DogApi;
+use super::{dog_api::DogApi, server::save_dog};
 
 #[component]
 pub fn DogView() -> Element {
@@ -26,6 +26,11 @@ pub fn DogView() -> Element {
                 "skip" 
             }
             button { id: "save", 
+                onclick: move |_| async move {
+                    let current = img_src.cloned().unwrap();
+                    img_src.restart();
+                    _ = save_dog(current).await;
+                }, 
                 "save" 
             }
         }
