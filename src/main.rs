@@ -1,5 +1,5 @@
 use dioxus::prelude::*;
-use hot_dog::components::DogView;
+use hot_dog::frontend::DogView;
 
 const MAIN_CSS: Asset = asset!("/assets/main.css");
 
