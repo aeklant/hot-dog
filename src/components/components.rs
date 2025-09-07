@@ -1,5 +1,6 @@
 use dioxus::prelude::*;
-use super::{dog_api::DogApi, server::save_dog};
+use crate::backend::server::save_dog;
+use crate::components::dog_api::DogApi;
 
 #[component]
 pub fn DogView() -> Element {
