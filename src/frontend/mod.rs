@@ -1,3 +1,3 @@
-mod dog_view;
+mod view;
 
-pub use dog_view::DogView;
+pub use view::DogView;
