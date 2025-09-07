@@ -18,3 +18,21 @@ pub(crate) async fn save_dog(image: String) -> Result<(), ServerFnError> {
 
     Ok(())
 }
+
+#[cfg(feature = "server")]
+thread_local! {
+    pub static DB: rusqlite::Connection = {
+        // Open DB from persisted file
+        let conn = rusqlite::Connection::open("hotdog.db").expect("Failed to open database");
+
+        conn.execute_batch(
+            "CREATE TABLE IF NOT EXISTS dogs (
+                id INTEGER PRIMARY KEY,
+                url TEXT NOT NULL,
+            );",
+        ).unwrap();
+
+        // Return the connection
+        conn
+    }
+}
