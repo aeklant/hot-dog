@@ -1,6 +1,10 @@
 use dioxus::prelude::*;
 use crate::backend::server::save_dog;
-use crate::frontend::dog_api::DogApi;
+
+#[derive(serde::Deserialize)]
+pub struct DogApi {
+    message: String,
+}
 
 #[component]
 pub fn DogView() -> Element {
