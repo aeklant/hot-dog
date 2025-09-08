@@ -1,3 +1,4 @@
+mod favorites;
 mod nav;
 mod view;
 
@@ -11,7 +12,8 @@ pub enum Route {
     #[layout(NavBar)]
     #[route("/")]
     DogView,
-
+    #[route("/favorites")]
+    Favorites,
     /* example catch-all for invalid URL;
     // TODO: implement the component
     #[route("/..segments")]
