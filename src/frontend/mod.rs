@@ -1,10 +1,13 @@
+mod nav;
 mod view;
 
 use dioxus::prelude::*;
 pub use view::DogView;
+pub use nav::NavBar;
 
 #[derive(Clone, PartialEq, Routable)]
 pub enum Route {
+    #[layout(NavBar)]
     #[route("/")]
     DogView,
 
