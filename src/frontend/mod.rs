@@ -2,8 +2,9 @@ mod nav;
 mod view;
 
 use dioxus::prelude::*;
-pub use view::DogView;
+pub use favorites::Favorites;
 pub use nav::NavBar;
+pub use view::DogView;
 
 #[derive(Clone, PartialEq, Routable)]
 pub enum Route {
