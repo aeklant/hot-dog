@@ -6,7 +6,7 @@ pub fn NavBar() -> Element {
     rsx! {
         div { id: "title",
             Link { to: Route::DogView,
-                h1 { "Dogger!" }
+                h1 { "HotDog!" }
             }
         }
         Outlet::<Route> {}
