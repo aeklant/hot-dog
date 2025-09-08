@@ -11,7 +11,12 @@ fn main() {
 fn App() -> Element {
     rsx! {
         document::Link { rel: "stylesheet", href: MAIN_CSS }
-        DogView {}
+        Router::<Route> {}
     }
 }
 
+#[derive(Clone, PartialEq, Routable)]
+enum Route {
+    #[route("/")]
+    DogView,
+}
