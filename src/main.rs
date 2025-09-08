@@ -1,5 +1,5 @@
 use dioxus::prelude::*;
-use hot_dog::frontend::DogView;
+use hot_dog::frontend::Route;
 
 const MAIN_CSS: Asset = asset!("/assets/main.css");
 
@@ -13,16 +13,4 @@ fn App() -> Element {
         document::Link { rel: "stylesheet", href: MAIN_CSS }
         Router::<Route> {}
     }
-}
-
-#[derive(Clone, PartialEq, Routable)]
-enum Route {
-    #[route("/")]
-    DogView,
-
-    /* example catch-all for invalid URL; 
-    // TODO: implement the component
-    #[route("/..segments")]
-    PageNotFound { segments: Vec<String> },
-    */
 }
